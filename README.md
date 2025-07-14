@@ -6,3 +6,5 @@
 6) Make banner component
 7) Make Freebook component
 8) Make footer component
+9) Make common layout
+10) Make Course section
