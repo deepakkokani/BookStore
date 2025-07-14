@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "price": 50,
+    "genre": "Classic",
+    "coverImage": "https://covers.openlibrary.org/b/id/7222246-L.jpg",
+    "rating": 4.5,
+    "description": "A story about the Jazz Age and mysterious Jay Gatsby.",
+    "category": "Free"
+  },
+  {
+    "id": 2,
+    "title": "1984",
+    "author": "George Orwell",
+    "price": 75,
+    "genre": "Dystopian",
+    "coverImage": "https://covers.openlibrary.org/b/id/11153246-L.jpg",
+    "rating": 4.7,
+    "description": "A chilling prophecy about a totalitarian future.",
+    "category": "Paid"
+  },
+  {
+    "id": 3,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "price": 65,
+    "genre": "Self-Help",
+    "coverImage": "https://covers.openlibrary.org/b/id/10430991-L.jpg",
+    "rating": 4.9,
+    "description": "Proven way to build good habits & break bad ones.",
+    "category": "Discounted"
+  },
+  {
+    "id": 4,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "price": 80,
+    "genre": "Fiction",
+    "coverImage": "https://covers.openlibrary.org/b/id/8228691-L.jpg",
+    "rating": 4.8,
+    "description": "Warm and humorous novel about racial inequality.",
+    "category": "Free"
+  },
+  {
+    "id": 5,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "price": 90,
+    "genre": "Programming",
+    "coverImage": "https://covers.openlibrary.org/b/id/9641477-L.jpg",
+    "rating": 4.6,
+    "description": "Handbook for agile software craftsmanship.",
+    "category": "Paid"
+  },
+  {
+    "id": 6,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "price": 40,
+    "genre": "Philosophical",
+    "coverImage": "https://covers.openlibrary.org/b/id/8167895-L.jpg",
+    "rating": 4.3,
+    "description": "Journey about finding one's own destiny.",
+    "category": "Discounted"
+  },
+  {
+    "id": 7,
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "price": 55,
+    "genre": "Self-Help",
+    "coverImage": "https://covers.openlibrary.org/b/id/10560953-L.jpg",
+    "rating": 4.4,
+    "description": "Rules for focused success in a distracted world.",
+    "category": "Free"
+  },
+  {
+    "id": 8,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt",
+    "price": 85,
+    "genre": "Programming",
+    "coverImage": "https://covers.openlibrary.org/b/id/8107890-L.jpg",
+    "rating": 4.7,
+    "description": "Tips for pragmatic and effective programming.",
+    "category": "Free"
+  },
+  {
+    "id": 9,
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "price": 95,
+    "genre": "History",
+    "coverImage": "https://covers.openlibrary.org/b/id/8370935-L.jpg",
+    "rating": 4.6,
+    "description": "Brief history of humankind.",
+    "category": "Discounted"
+  },
+  {
+    "id": 10,
+    "title": "Educated",
+    "author": "Tara Westover",
+    "price": 60,
+    "genre": "Memoir",
+    "coverImage": "https://covers.openlibrary.org/b/id/10461706-L.jpg",
+    "rating": 4.5,
+    "description": "A memoir about family and self-invention.",
+    "category": "Paid"
+  }
+]
