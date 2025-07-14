@@ -4,7 +4,7 @@ import { HiOutlineMail } from "react-icons/hi";
 const Banner = () => {
   return (
     <>
-      <div className="max-w-screen h-screen p-20  flex flex-col md:flex-row  justify-between ">
+      <div className="max-w-screen min-h-screen p-20  flex flex-col md:flex-row  justify-between my-10">
         <div className="order-2 md:order-1 w-full md:w-1/2  mt-32 md:mt-32">
           <div className="space-y-12 flex flex-col">
             <h1 className="text-4xl font-semibold">
