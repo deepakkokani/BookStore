@@ -1,15 +1,25 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import Home from "../home/home";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItem = (
     <>
-      <li><a className="hover:text-blue-600">Home</a></li>
-      <li><a className="hover:text-blue-600">Course</a></li>
-      <li><a className="hover:text-blue-600">Contact</a></li>
-      <li><a className="hover:text-blue-600">About</a></li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/course">Course</Link>
+      </li>
+      <li>
+        <Link to="/contact">Contact</Link>
+      </li>
+      <li>
+        <Link to="/about">About</Link>
+      </li>
     </>
   );
 
