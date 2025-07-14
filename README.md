@@ -8,3 +8,4 @@
 8) Make footer component
 9) Make common layout
 10) Make Course section
+11) Dark and light mode implemented using redux toolkit
