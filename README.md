@@ -1,5 +1,8 @@
 1) npm create vite@latest BookStore
 2) npm install
-3) install tailwindcss
-4) start the application using npm run dev
-5) make navbar component
+3) Install tailwindcss
+4) Start the application using npm run dev
+5) Make navbar component
+6) Make banner component
+7) Make Freebook component
+8) Make footer component
