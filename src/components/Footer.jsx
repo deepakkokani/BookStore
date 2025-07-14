@@ -1,10 +1,13 @@
 import React from "react";
 import { FaTwitter, FaFacebookF, FaYoutube } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({darkMode}) => {
   return (
-    <footer className="flex flex-col mt-7 items-center gap-6 bg-slate-300 p-6 md:p-10">
-      <ul className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 font-medium text-center md:text-left">
+ <footer
+      className={`flex flex-col mt-7 items-center gap-6 ${
+        darkMode ? "bg-gray-900 text-white" : "bg-slate-300 text-black"
+      } p-6 md:p-10`}
+    >      <ul className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 font-medium text-center md:text-left">
         <li><a>About us</a></li>
         <li><a>Contact</a></li>
         <li><a>Jobs</a></li>

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Course = () => {
   return (
     <>
-      <div className="min-h-screen mx-auto md:px-20 ">
-        <div className="mt-40 items-center flex flex-col text-center  justify-center">
+    <div className=" min-h-screen px-5 md:px-20 py-10  md:flex-row justify-between">
+        <div className="mt-32 items-center flex flex-col text-center   justify-center">
           <h1 className="text-3xl font-medium md:text-4xl ">
             We're delighted to have you{" "}
             <span className="text-pink-600">Here! :)</span>

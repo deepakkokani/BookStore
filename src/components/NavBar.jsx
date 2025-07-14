@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Home from "../home/home";
-
-const NavBar = () => {
+import { useSelector, useDispatch } from "react-redux";
+import { toggleTheme } from "../redux/features/ThemeSlice";
+const NavBar = ({ darkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const dispatch = useDispatch();
 
   const navItem = (
     <>
@@ -24,7 +28,11 @@ const NavBar = () => {
   );
 
   return (
-    <div className="bg-slate-300 px-5 md:px-20 py-5 fixed top-0 left-0 right-0 z-50">
+    <div
+      className={`${
+        darkMode ? "bg-gray-900 text-white" : "bg-slate-300 text-black"
+      } px-5 md:px-20 py-5 fixed top-0 left-0 right-0 z-50`}
+    >
       <div className="flex justify-between items-center w-full">
         <h1 className="text-2xl font-bold">BookStore</h1>
 
@@ -39,11 +47,20 @@ const NavBar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="pl-8 pr-2 py-1 rounded text-sm outline-none"
+              className={
+                darkMode
+                  ? "pl-8 pr-2 py-1 rounded text-sm outline-none text-black"
+                  : "pl-8 pr-2 py-1 rounded text-sm outline-none text-black"
+              }
             />
           </div>
-
-          <button className="bg-black text-white px-3 py-2 rounded-lg hover:bg-slate-600">
+          <button
+            onClick={() => dispatch(toggleTheme())}
+            className=" px-2 py-2 bg-black text-white rounded-lg"
+          >
+            {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
+          </button>
+          <button className="bg-blue-500 text-white px-3 py-2 rounded-lg hover:bg-blue-800">
             Login
           </button>
         </div>
