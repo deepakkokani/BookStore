@@ -2,3 +2,4 @@
 2) npm install
 3) install tailwindcss
 4) start the application using npm run dev
+5) make navbar component
