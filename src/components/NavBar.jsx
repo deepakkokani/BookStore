@@ -2,27 +2,36 @@ import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import Home from "../home/home";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../redux/features/ThemeSlice";
-const NavBar = ({ darkMode }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+import Login from "./login";
 
+const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const darkMode = useSelector((state) => state.theme.darkMode);
   const dispatch = useDispatch();
 
   const navItem = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/" onClick={() => setMenuOpen(false)}>
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="/course">Course</Link>
+        <Link to="/course" onClick={() => setMenuOpen(false)}>
+          Course
+        </Link>
       </li>
       <li>
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>
+          Contact
+        </Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>
+          About
+        </Link>
       </li>
     </>
   );
@@ -31,15 +40,16 @@ const NavBar = ({ darkMode }) => {
     <div
       className={`${
         darkMode ? "bg-gray-900 text-white" : "bg-slate-300 text-black"
-      } px-5 md:px-20 py-5 fixed top-0 left-0 right-0 z-50`}
+      } px-5 md:px-20 py-4 fixed top-0 left-0 right-0 z-50 shadow-md`}
     >
-      <div className="flex justify-between items-center w-full">
-        <h1 className="text-2xl font-bold">BookStore</h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-xl md:text-2xl font-bold">BookStore</h1>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
-          <ul className="flex gap-5 text-sm font-semibold">{navItem}</ul>
+        <div className="hidden md:flex items-center gap-5">
+          <ul className="flex gap-4 text-sm font-semibold">{navItem}</ul>
 
+          {/* Search */}
           <div className="relative">
             <span className="absolute left-2 top-1/2 transform -translate-y-1/2">
               <img src="searchIcon.png" alt="search" className="h-4 w-4" />
@@ -47,25 +57,28 @@ const NavBar = ({ darkMode }) => {
             <input
               type="text"
               placeholder="Search"
-              className={
-                darkMode
-                  ? "pl-8 pr-2 py-1 rounded text-sm outline-none text-black"
-                  : "pl-8 pr-2 py-1 rounded text-sm outline-none text-black"
-              }
+              className="pl-8 pr-2 py-1 rounded text-sm outline-none text-black w-40 md:w-56"
             />
           </div>
+
+          {/* Theme Toggle */}
           <button
             onClick={() => dispatch(toggleTheme())}
-            className=" px-2 py-2 bg-black text-white rounded-lg"
+            className="px-2 py-2 bg-black text-white rounded-lg"
           >
-            {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
+            {darkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
           </button>
-          <button className="bg-blue-500 text-white px-3 py-2 rounded-lg hover:bg-blue-800">
+
+          {/* Login Button */}
+          <button
+            onClick={() => document.getElementById("my_modal_3").showModal()}
+            className="bg-blue-500 text-white px-3 py-2 rounded-lg hover:bg-blue-800"
+          >
             Login
           </button>
         </div>
 
-        {/* Hamburger */}
+        {/* Hamburger Icon */}
         <button
           className="md:hidden text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -76,25 +89,48 @@ const NavBar = ({ darkMode }) => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden mt-3 space-y-3 bg-slate-200 p-4 rounded shadow">
-          <ul className="flex flex-col gap-2 text-sm font-semibold">
+        <div
+          className={`md:hidden mt-3 space-y-4 rounded-lg p-4 ${
+            darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
+          } shadow-lg`}
+        >
+          <ul className="flex flex-col gap-3 text-base font-semibold">
             {navItem}
           </ul>
-          <div className="relative mt-3">
-            <span className="absolute left-2 top-1/2 transform -translate-y-1/2">
+
+          {/* Search */}
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 transform -translate-y-1/2">
               <img src="searchIcon.png" alt="search" className="h-4 w-4" />
             </span>
             <input
               type="text"
               placeholder="Search"
-              className="pl-8 pr-2 py-1 rounded text-sm outline-none w-full"
+              className="pl-9 pr-3 py-2 w-full rounded-lg text-sm outline-none text-black"
             />
           </div>
-          <button className="w-full bg-black text-white px-3 py-2 rounded-lg hover:bg-slate-600">
-            Login
-          </button>
+
+          {/* Theme & Login */}
+          <div className="flex items-center justify-between mt-3">
+            <button
+              onClick={() => dispatch(toggleTheme())}
+              className="px-3 py-2 bg-black text-white rounded-lg"
+            >
+              {darkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
+            </button>
+
+            <button
+              onClick={() => document.getElementById("my_modal_3").showModal()}
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-800"
+            >
+              Login
+            </button>
+          </div>
         </div>
       )}
+
+      {/* Render login modal only once */}
+      <Login />
     </div>
   );
 };

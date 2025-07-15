@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-const FreeBook = () => {
+const FreeBook = ({darkMode}) => {
   const filterData = list.filter((data) => data.category === "Free");
 
   return (
@@ -28,7 +28,7 @@ const FreeBook = () => {
       >
         {filterData.map((book) => (
           <SwiperSlide key={book.id}>
-            <div className="flex flex-col justify-between border rounded shadow-md p-4 bg-white h-full hover:shadow-lg transition-transform duration-300 transform hover:scale-105">
+            <div className={`lex flex-col justify-between border rounded shadow-md p-4 bg-white h-full hover:shadow-lg transition-transform duration-300 transform hover:scale-105 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
               <img
                 src={book.coverImage}
                 alt={book.title}
@@ -36,7 +36,7 @@ const FreeBook = () => {
               />
               <div className="flex-1 ">
                 <h2 className="font-bold text-lg mb-1">{book.title}</h2>
-                <p className="text-sm text-gray-600 mb-1">by {book.author}</p>
+                <p className={`text-sm mb-1 ${darkMode ? "text-white" : ""}`}>by {book.author}</p>
                 <p className="text-sm mb-2">Price: ₹{book.price}</p>
                 <div className="flex items-center">
                   <p className="text-sm text-pink-500 font-semibold">

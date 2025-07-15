@@ -7,6 +7,8 @@ import Home from "./home/home";
 import Course from "./course/Course";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
+import SignUp from "./components/SignUp";
+
 const App = () => {
   return (
     <div>
@@ -15,6 +17,8 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}></Route>
           <Route path="course" element={<Course />}></Route>
+
+          <Route path="signup" element={<SignUp />}></Route>
         </Route>
       </Routes>
     </div>
