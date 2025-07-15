@@ -9,3 +9,5 @@
 9) Make common layout
 10) Make Course section
 11) Dark and light mode implemented using redux toolkit
+12) Make Login Component
+13) Make Signup Component
